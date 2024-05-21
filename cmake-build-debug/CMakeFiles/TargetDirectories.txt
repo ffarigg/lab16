@@ -1,3 +1,8 @@
 C:/Users/Арина Константиновна/CLionProjects/lab16/cmake-build-debug/CMakeFiles/lab16.dir
 C:/Users/Арина Константиновна/CLionProjects/lab16/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/Арина Константиновна/CLionProjects/lab16/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Арина Константиновна/CLionProjects/lab16/cmake-build-debug/libs/CMakeFiles/edit_cache.dir
+C:/Users/Арина Константиновна/CLionProjects/lab16/cmake-build-debug/libs/CMakeFiles/rebuild_cache.dir
+C:/Users/Арина Константиновна/CLionProjects/lab16/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir
+C:/Users/Арина Константиновна/CLionProjects/lab16/cmake-build-debug/libs/data_structures/CMakeFiles/edit_cache.dir
+C:/Users/Арина Константиновна/CLionProjects/lab16/cmake-build-debug/libs/data_structures/CMakeFiles/rebuild_cache.dir
