@@ -1,32 +1,43 @@
 #include "libs/data_structures/matrix/matrix.h"
 #include <math.h>
 
-float getDistance(int *a, int n) {
-    float distance = 0;
+long long getSum(int *a, int n) {
+    long long sum = 0;
     for (int i = 0; i < n; i++)
-        distance += a[i] * a[i];
-    return sqrt(distance);
+        sum += a[i];
+    return sum;
 }
 
-void insertionSortRowsMatrixByRowCriteriaF(matrix m, float (*criteria)(int *,
-                                                                       int)) {
-    float criteriaArray[m.nRows];
-    for (int i = 0; i < m.nRows; i++)
-        criteriaArray[i] = criteria(m.values[i], m.nCols);
-    for (int i = 1; i < m.nRows; i++) {
-        float t = criteriaArray[i];
-        int j = i;
-        while (j > 0 && criteriaArray[j - 1] > t) {
-            criteriaArray[j] = criteriaArray[j - 1];
-            swapRows(m, j, j - 1);
-            j--;
+int cmp_long_long(const void *pa, const void *pb) {
+    long long a = *(const long long *) pa;
+    long long b = *(const long long *) pb;
+    if (a < b)
+        return -1;
+    else if (a > b)
+        return 1;
+    return 0;
+}
+
+int countNUnique(long long *a, int n) {
+    qsort(a, n, sizeof(long long), cmp_long_long);
+    int count = 0;
+    int resCount = 0;
+    for (int i = 1; i < n; i++) {
+        if (a[i] == a[i - 1])
+            count++;
+        if (count > 0) {
+            resCount++;
+            count = 0;
         }
-        criteriaArray[j] = t;
     }
+    return resCount;
 }
 
-void sortByDistances(matrix m) {
-    insertionSortRowsMatrixByRowCriteriaF(m, getDistance);
+int countEqClassesByRowsSum(matrix m) {
+    long long sumRows[m.nRows];
+    for (int i = 0; i < m.nCols; i++)
+        sumRows[i] = getSum(m.values[i], m.nCols);
+    return countNUnique(sumRows, m.nRows);
 }
 
 int main() {
@@ -34,7 +45,6 @@ int main() {
     scanf("%d %d", &nRows1, &nCols1);
     matrix m1 = getMemMatrix(nRows1, nCols1);
     inputMatrix(m1);
-    sortByDistances(m1);
-    outputMatrix(m1);
+    printf("%d", countEqClassesByRowsSum(m1));
     return 0;
 }
