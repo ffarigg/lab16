@@ -7,8 +7,8 @@ int main(){
     matrix m = getMemMatrix(nRows, nCols);
     inputMatrix(m);
 
-    position p1 = getMinValuePos(m);
     position p2 = getMaxValuePos(m);
+    position p1 = getMinValuePos(m);
     swapRows(m, p1.rowIndex, p2.rowIndex);
 
     outputMatrix(m);
