@@ -1,4 +1,5 @@
 #include "libs/data_structures/matrix/matrix.h"
+
 matrix mulMatrices(matrix m1, matrix m2) {
     assert(m1.nCols == m2.nRows);
     matrix m3 = getMemMatrix(m1.nRows, m2.nCols);
@@ -11,20 +12,21 @@ matrix mulMatrices(matrix m1, matrix m2) {
     return m3;
 }
 
-void getSquareOfMatrixIfSymmetric(matrix *m) {
-    if (isSymmetricMatrix(*m))
-        *m = mulMatrices(*m, *m);
+bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
+    matrix m3 = mulMatrices(m1, m2);
+    return isEMatrix(m3) ? 1 : 0;
 }
+
 int main() {
-    int nRows, nCols;
-    scanf("%d %d", &nRows, &nCols);
-
-    matrix m = getMemMatrix(nRows, nCols);
-    inputMatrix(m);
-
-    getSquareOfMatrixIfSymmetric(&m);
-
-    outputMatrix(m);
-
+    int nRows1, nCols1;
+    scanf("%d %d", &nRows1, &nCols1);
+    matrix m1 = getMemMatrix(nRows1, nCols1);
+    inputMatrix(m1);
+    int nRows2, nCols2;
+    scanf("%d %d", &nRows2, &nCols2);
+    matrix m2 = getMemMatrix(nRows2, nCols2);
+    inputMatrix(m2);
+    printf("%d", isMutuallyInverseMatrices(m1, m2));
     return 0;
 }
+
