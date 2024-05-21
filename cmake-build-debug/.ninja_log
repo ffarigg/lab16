@@ -1,0 +1,10 @@
+# ninja log v5
+1	74	7380033788573193	CMakeFiles/lab16.dir/main.c.obj	2935518620821fe9
+4	119	7380033789023307	CMakeFiles/lab16.dir/libs/data_structures/matrix/matrix.c.obj	7538575c21bc9c2
+2	61	7380034123181734	CMakeFiles/lab16.dir/main.c.obj	2935518620821fe9
+5	82	7380034123391400	CMakeFiles/lab16.dir/libs/data_structures/matrix/matrix.c.obj	7538575c21bc9c2
+4	83	7380034978112295	CMakeFiles/lab16.dir/libs/data_structures/matrix/matrix.c.obj	7538575c21bc9c2
+2	56	7380035037187923	CMakeFiles/lab16.dir/main.c.obj	2935518620821fe9
+5	75	7380035037387970	CMakeFiles/lab16.dir/libs/data_structures/matrix/matrix.c.obj	7538575c21bc9c2
+2	56	7380035155842876	CMakeFiles/lab16.dir/main.c.obj	2935518620821fe9
+4	76	7380035156032918	CMakeFiles/lab16.dir/libs/data_structures/matrix/matrix.c.obj	7538575c21bc9c2
